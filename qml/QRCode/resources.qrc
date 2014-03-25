@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>resources/qrfree.kaywa.com.jpg</file>
+    </qresource>
+</RCC>
