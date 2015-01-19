@@ -20,4 +20,4 @@
 - port the solution to other embedded devices > cubieboard family
 
 
-#EOF
+#EOF#
