@@ -18,3 +18,6 @@
 - drop the "streamer" dependency - use GSTreamer with usb webcam support and Qt5 integration
 - incorporate an NFC shield
 - port the solution to other embedded devices > cubieboard family
+
+
+#EOF
