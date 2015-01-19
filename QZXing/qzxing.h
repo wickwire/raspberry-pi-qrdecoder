@@ -5,9 +5,9 @@
 #include <QObject>
 #include <QImage>
 
-//#if QT_VERSION >= 0x040700
-//#include <QtQuick>
-//#endif
+#if QT_VERSION >= 0x040700
+#include <QtDeclarative>
+#endif
 
 /**
   * A class containing a very very small subset of the ZXing library.
@@ -47,12 +47,12 @@ public:
       */
     void setDecoder(DecoderFormatType hint);
 
-//#if QT_VERSION >= 0x040700
-//static void registerQMLTypes()
-//{
-//      qmlRegisterType<QZXing>("QZXing", 1, 2, "QZXing");
-//}
-//#endif
+#if QT_VERSION >= 0x040700
+    static void registerQMLTypes()
+    {
+        qmlRegisterType<QZXing>("QZXing", 1, 2, "QZXing");
+    }
+#endif
 
 public slots:
     /**
@@ -64,18 +64,15 @@ public slots:
     /**
       * The decoding function accessible from QML
       */
-    //QString decodeImageQML(QObject *item);
-    QString decodeImageQML(QString imgPath);
+    QString decodeImageQML(QObject *item);
 
     /**
       * The decoding function accessible from QML. Able to set the decoding
       * of a portion of the image.
       */
-//    QString decodeSubImageQML(QObject* item,
-//                              const double offsetX = 0 , const double offsetY = 0,
-//                              const double width = 0, const double height = 0);
-
-    QString decodeSubImageQML(QString imgPath);
+    QString decodeSubImageQML(QObject* item,
+                              const double offsetX = 0 , const double offsetY = 0,
+                              const double width = 0, const double height = 0);
 
 signals:
     void decodingStarted();
